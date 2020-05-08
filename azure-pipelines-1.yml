@@ -5,10 +5,8 @@
 
 trigger:
   branches:
-    include:
-      - '*'
     exclude:
-      - 'master'
+      - master
 
 pool:
   vmImage: 'windows-latest'
