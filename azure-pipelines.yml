@@ -9,7 +9,6 @@ trigger:
       - master
     exclude:
       - '*'
-
       
 pool:
   vmImage: 'ubuntu-latest'
