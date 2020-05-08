@@ -7,19 +7,26 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+    feedsToUse: 'select'
+    vstsFeed: 'd728bbca-18db-44f0-917c-0f16adc5711f'
+    
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 - task: DotNetCoreCLI@2
   inputs:
-      command: 'test'
+      command: 'run'
       projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 
 
 
 - script: echo Hello, world!
+
   displayName: 'Run a one-line script'
 
 - script: 
