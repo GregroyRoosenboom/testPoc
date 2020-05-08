@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+    feedsToUse: 'select'
+    vstsFeed: 'd728bbca-18db-44f0-917c-0f16adc5711f'
+    
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+- task: DotNetCoreCLI@2
+  inputs:
+      command: 'test'
+      projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+
+
+
+- script: echo Hello, world!
+
+  displayName: 'Run a one-line script'
+
+- script: 
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  
