@@ -10,7 +10,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
       command: 'test'
-      projects: '/FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+      projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 
 
 - script: echo Hello, world!
