@@ -20,7 +20,7 @@ steps:
     projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 - task: DotNetCoreCLI@2
   inputs:
-      command: 'run'
+      command: 'test'
       projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 
 
