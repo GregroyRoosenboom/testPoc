@@ -1,8 +1,12 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 
-public class Class1
+public class ArticleTests
 {
-	public Class1()
-	{
-	}
+    [Test]
+    public void OpenAnArticle()
+    {
+        Assert.IsTrue(true);
+    }
+
 }
