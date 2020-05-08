@@ -7,10 +7,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
 - task: DotNetCoreCLI@2
   inputs:
       command: 'test'
       projects: 'FrontEndTests/FrontEndTests/FrontEndTests.csproj'
+
 
 
 - script: echo Hello, world!
